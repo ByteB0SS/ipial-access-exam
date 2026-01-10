@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="../../../../global.css" />
+    <link rel="stylesheet" href="../admin.global.css" />
+    <link rel="stylesheet" href="./overview.css" />
+    <title>DashBoard</title>
+  </head>
+  <body>
+    <header class="header">
+      <a href="#" class="brand">
+        <img src="../../../../public/logos/ipial-logo (2).png" alt="Logo IPIAL" />
+        <span>DashBoard de administrador</span>
+      </a>
+    </header>
+
+    <aside>
+      <nav class="mobile-nav">
+        <a class="active" href="#">Over View</a>
+        <a class="" href="../candidates/candidates.html">Candidatos</a>
+      </nav>
+    </aside>
+
+    <main>
+      <section class="dashboard-overview container">
+        <section class="overview">
+          <!-- TOTAL CANDIDATOS -->
+          <article class="overview-card">
+            <div class="card-header">
+              <span class="card-title">Total de Candidatos</span>
+              <span class="badge positive">+8%</span>
+            </div>
+
+            <h2 class="card-value">1,254</h2>
+
+            <p class="card-highlight">Registos concluídos ↗</p>
+            <p class="card-subtext">Todos os candidatos inscritos</p>
+          </article>
+
+          <!-- APROVADOS -->
+          <article class="overview-card">
+            <div class="card-header">
+              <span class="card-title">Aprovados</span>
+              <span class="badge positive">+12%</span>
+            </div>
+
+            <h2 class="card-value">420</h2>
+
+            <p class="card-highlight">Classificação final ↗</p>
+            <p class="card-subtext">Candidatos admitidos</p>
+          </article>
+
+          <!-- REPROVADOS -->
+          <article class="overview-card">
+            <div class="card-header">
+              <span class="card-title">Reprovados</span>
+              <span class="badge negative">-3%</span>
+            </div>
+
+            <h2 class="card-value">682</h2>
+
+            <p class="card-highlight">Nota insuficiente</p>
+            <p class="card-subtext">Não atingiram a média</p>
+          </article>
+
+          <!-- CURSOS -->
+          <article class="overview-card">
+            <div class="card-header">
+              <span class="card-title">Cursos Disponíveis</span>
+            </div>
+
+            <h2 class="card-value">4</h2>
+
+            <p class="card-highlight">Áreas Técnicas</p>
+            <p class="card-subtext">
+              Construção Civil, Electrónica, Electricidade, Informática
+            </p>
+          </article>
+
+          <!-- VISITANTES (SECUNDÁRIO) -->
+          <article class="overview-card">
+            <div class="card-header">
+              <span class="card-title">Estados dos candidatos</span>
+            </div>
+
+            <div class="chart-wrapper">
+              <canvas id="candidatesStatusChart"></canvas>
+            </div>
+          </article>
+        </section>
+      </section>
+    </main>
+
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script>
+      const ctx = document.getElementById("candidatesStatusChart");
+
+      new Chart(ctx, {
+        type: "doughnut",
+        data: {
+          labels: ["Aprovados", "Reprovados", "Pendentes"],
+          datasets: [
+            {
+              data: [420, 682, 152], // valores de exemplo
+              backgroundColor: [
+                "#22c55e", // verde
+                "#ef4444", // vermelho
+                "#facc15", // amarelo
+              ],
+              borderWidth: 0,
+            },
+          ],
+        },
+        options: {
+          cutout: "65%",
+          plugins: {
+            legend: {
+              position: "bottom",
+            },
+          },
+        },
+      });
+    </script>
+  </body>
+</html>

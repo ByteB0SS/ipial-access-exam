@@ -1,0 +1,196 @@
+/* =========================
+   HERO SECTION
+========================= */
+
+.hero {
+  padding: 8rem 0;
+  background: linear-gradient(
+    180deg,
+    #f8f9fa 0%,
+    #ffffff 100%
+  );
+}
+
+.hero-content {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 4rem;
+  align-items: center;
+}
+
+.hero-text {
+  text-align: center;
+}
+
+.hero-text .btn {
+  margin-top: 2.5rem;
+  animation: scaleUpAndDown 3s ease-in-out infinite;
+}
+
+/* =========================
+   HERO CHECK (RESULTADO)
+========================= */
+
+.hero-check {
+  background: #ffffff;
+  padding: 3rem;
+  border-radius: 1.2rem;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+  text-align: center;
+}
+
+.hero-check h3 {
+  font-size: 2.2rem;
+  margin-bottom: 1rem;
+  color: var(--primary-color);
+}
+
+.hero-check p {
+  font-size: 1.4rem;
+  margin-bottom: 2rem;
+  color: #555;
+}
+
+.hero-form {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.hero-form input {
+  padding: 1.2rem 1.5rem;
+  border-radius: 0.8rem;
+  border: 1px solid #ccc;
+  font-size: 1.4rem;
+  width: 100%;
+}
+
+.hero-form input:focus {
+  outline: none;
+  border-color: var(--primary-color);
+}
+
+
+/* =========================
+   ABOUT SECTION
+========================= */
+
+.about {
+  padding: 8rem 0;
+  background-color: var(--dark-bg);
+  color: #ffffff;
+}
+
+.about .section-title {
+  color: #ffffff;
+}
+
+.about-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 3rem;
+}
+
+.about-card h3 {
+  margin-bottom: 1rem;
+  font-size: 1.8rem;
+}
+
+.about-card p {
+  font-size: 1.4rem;
+  color: #686868;
+  font-weight: 600;
+}
+
+/* =========================
+   COURSES SECTION
+========================= */
+
+.courses {
+  padding: 8rem 0;
+  background-color: #ffffff;
+}
+
+.courses-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 3rem;
+}
+
+.course-card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+
+.course-card dotlottie-wc {
+  width: 18rem;
+  height: 18rem;
+  margin-bottom: 1.5rem;
+}
+
+.course-card h3 {
+  font-size: 1.9rem;
+  margin-bottom: 1rem;
+  color: orange;
+}
+
+.course-card p {
+  font-size: 1.4rem;
+  color: var(--secondary-color);
+  margin-bottom: 2rem;
+}
+
+/* =========================
+   ANIMATIONS
+========================= */
+
+@keyframes scaleUpAndDown {
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.05);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+/* =========================
+   RESPONSIVE BREAKPOINTS
+========================= */
+
+@media (min-width: 768px) {
+  .hero-content {
+    grid-template-columns: 1fr 1fr;
+    text-align: left;
+  }
+
+  .hero-text {
+    text-align: left;
+  }
+
+  .about-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  .courses-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (min-width: 1024px) {
+  .hero {
+    padding: 10rem 0;
+  }
+
+  .hero-title {
+    font-size: 5rem;
+  }
+
+  .courses-grid {
+    grid-template-columns: repeat(4, 1fr);
+  }
+}

@@ -1,0 +1,69 @@
+main {
+    padding-top: 1.5rem;
+    padding-bottom: 7rem;
+}
+
+/* 
+===============================
+    Overview and cards
+===============================
+*/
+
+.overview {
+  display: grid;
+  gap: 1.2rem;
+}
+
+.overview-card {
+  background: white;
+  border: var(--dark-color) 2px;
+  border-radius: var(--radius-sm);
+  padding: 1.2rem;
+  box-shadow: 0 8px 20px rgba(0,0,0,0.04);
+}
+
+.card-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.card-title {
+  font-size: 2rem;
+  color: var(--dark-color);
+}
+
+.card-value {
+  font-size: 2rem;
+  font-weight: 700;
+  margin: 0.6rem 0;
+}
+
+.card-highlight {
+  font-weight: 600;
+  font-size: 1.4rem;
+}
+
+.card-subtext {
+  font-size: 1.2rem;
+  color: #6b7280;
+}
+
+.card-select {
+  border: 1px solid #e5e7eb;
+  padding: 0.3rem 0.6rem;
+  border-radius: 8px;
+  font-size: 0.8rem;
+  background: #fff;
+}
+
+
+.chart-wrapper {
+  max-width: 280px;   /* tamanho ideal para card */
+  margin: 0 auto;     /* centraliza */
+}
+
+canvas {
+  width: 100% !important;
+  height: auto !important;
+}

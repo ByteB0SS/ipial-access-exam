@@ -1,0 +1,251 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <title>Exame de Acesso | IPIAL</title>
+
+  <link rel="shortcut icon" href="./public/logos/ipial-logo (2).png" type="image/x-icon" />
+  <link rel="stylesheet" href="./global.css" />
+  <link rel="stylesheet" href="./index.css" />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Bangers&display=swap" rel="stylesheet" />
+</head>
+
+<body>
+
+  <!-- ================= HEADER ================= -->
+  <header class="header">
+    <div class="container header-content">
+
+      <a href="#" class="brand">
+        <img src="./public/logos/ipial-logo (2).png" alt="Logo IPIAL" />
+        <span>IPIAL</span>
+      </a>
+
+      <nav class="nav">
+        <ul class="nav-list">
+          <li><a href="#home">Início</a></li>
+          <li><a href="#about">Sobre</a></li>
+          <li><a href="#courses">Cursos</a></li>
+          <li><a href="#footer">rodapé</a></li>
+        </ul>
+      </nav>
+
+      <nav class="nav-mobile" id="nav-mobile">
+        <ul class="nav-list-mobile">
+          <li><a href="#home">Início</a></li>
+          <li><a href="#about">Sobre</a></li>
+          <li><a href="#courses">Cursos</a></li>
+          <li><a href="#footer">rodapé</a></li>
+          <li><a href="./pages/auth/login/login.html" class="btn secondary" style="margin-top: auto;">Entrar</a></li>
+          <li><a href="./pages/auth/register/register.html" class="btn primary">Candidatar</a
+        </ul>
+      </nav>
+
+      <div class="header-actions">
+        <a href="./pages/auth/login/login.html" class="btn secondary">Entrar Como Admin</a>
+        <a href="./pages/auth/register/register.html" class="btn primary">Candidatar</a>
+
+        <button class="menu-mobile" id="menu-mobile-button">☰</button>
+      </div>
+
+    </div>
+  </header>
+
+  <!-- ================= MAIN ================= -->
+  <main id="home">
+
+    <!-- ===== HERO ===== -->
+    <section class="hero">
+      <div class="container hero-content">
+
+        <div class="hero-text">
+          <p class="hero-subtitle">Invista na sua educação</p>
+
+          <h1 class="hero-title">
+            Exame de acesso para o
+            <span>Instituto Politécnico Industrial<br />Alda Lara</span>
+          </h1>
+
+          <p class="hero-description">
+            Candidate-se aos exames de acesso do IPIAL e escolha entre diversos
+            cursos técnicos para construir o seu futuro profissional.
+          </p>
+
+          <button class="btn primary">Candidatar-me</button>
+        </div>
+
+        <div class="hero-check">
+          <h3>Já sou candidato</h3>
+          <p>Insira a sua chave secreta para ver o resultado</p>
+
+          <form class="hero-form">
+            <input
+              type="text"
+              placeholder="Digite a chave secreta"
+              required
+            />
+            <button type="submit" class="btn secondary">
+              Ver resultado
+            </button>
+          </form>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ===== ABOUT ===== -->
+    <section class="about" id="about">
+      <div class="container">
+
+        <h2 class="section-title">Sobre</h2>
+
+        <div class="about-grid">
+
+          <article class="about-card">
+            <span class="about-number">1</span>
+            <h3>Por que foi criado</h3>
+            <p>
+              O sistema de Exames de Acesso do IPIAL foi criado para informatizar
+              e otimizar o processo de seleção de candidatos, reduzindo erros,
+              atrasos e dificuldades da gestão manual.
+            </p>
+          </article>
+
+          <article class="about-card">
+            <span class="about-number">2</span>
+            <h3>Como funciona</h3>
+            <p>
+              Permite o registo completo dos candidatos, classificação automática,
+              emissão de resultados e geração de relatórios em formato visual ou PDF.
+            </p>
+          </article>
+
+          <article class="about-card">
+            <span class="about-number">3</span>
+            <h3>Outros detalhes</h3>
+            <p>
+              Inclui autenticação para administradores e foi desenvolvido por alunos
+              da disciplina de TLP, utilizando HTML, CSS e JavaScript.
+            </p>
+          </article>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== COURSES ===== -->
+    <section class="courses" id="courses">
+      <div class="container">
+
+        <h2 class="section-title">Cursos</h2>
+
+        <div class="courses-grid">
+
+          <article class="course-card">
+            <dotlottie-wc
+              src="https://lottie.host/51901d7f-f13a-470d-ae04-be5cd2f4ec2f/2CKqrW5ts7.lottie"
+              autoplay loop>
+            </dotlottie-wc>
+
+            <h3>Informática</h3>
+            <p>
+              Programação, redes, sistemas informáticos e tecnologias digitais.
+            </p>
+            <a href="#candidate" class="btn primary">Candidatar-me</a>
+          </article>
+
+          <article class="course-card">
+            <dotlottie-wc
+              src="https://lottie.host/76601245-3825-4630-a9d6-e3b1d1536138/vWDxH54v1G.lottie"
+              autoplay loop>
+            </dotlottie-wc>
+
+            <h3>Construção Civil</h3>
+            <p>
+              Planeamento, execução e acompanhamento de obras civis.
+            </p>
+            <a href="#candidate" class="btn primary">Candidatar-me</a>
+          </article>
+
+          <article class="course-card">
+            <dotlottie-wc
+              src="https://lottie.host/b7b6251a-58cf-4859-b4cc-304c24ae3f49/o0BZLqpWUp.lottie"
+              autoplay loop>
+            </dotlottie-wc>
+
+            <h3>Eletricidade</h3>
+            <p>
+              Instalações elétricas, manutenção e segurança industrial.
+            </p>
+            <a href="#candidate" class="btn primary">Candidatar-me</a>
+          </article>
+
+          <article class="course-card">
+            <dotlottie-wc
+              src="https://lottie.host/9a18091d-1ee6-4e7b-96df-e6a045d8b704/hkZb59GGMe.lottie"
+              autoplay loop>
+            </dotlottie-wc>
+
+            <h3>Eletrónica e Telecomunicações</h3>
+            <p>
+              Circuitos eletrónicos e sistemas de comunicação.
+            </p>
+            <a href="#candidate" class="btn primary">Candidatar-me</a>
+          </article>
+
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ================= FOOTER ================= -->
+  <footer class="footer" id="footer">
+    <div class="container footer-grid">
+
+      <div class="footer-brand">
+        <img src="./public/logos/ipial-logo (2).png" alt="IPIAL Logo" />
+        <p>
+          Sistema de Exames de Acesso do Instituto Politécnico Industrial Alda Lara.
+        </p>
+      </div>
+
+      <div class="footer-links">
+        <h4>Instituição</h4>
+        <a href="#about">Sobre</a>
+        <a href="#courses">Cursos</a>
+        <a href="#candidate">Candidatar-me</a>
+      </div>
+
+      <div class="footer-links">
+        <h4>Contacto</h4>
+        <span>Luanda, Angola</span>
+        <span>contacto@ipial.co.ao</span>
+        <span>+244 XXX XXX XXX</span>
+      </div>
+
+    </div>
+
+    <div class="footer-bottom">
+      <span>© 2026 IPIAL</span>
+      <span>Projeto académico</span>
+    </div>
+  </footer>
+
+  <!-- LOTTIE -->
+  <script
+    src="https://unpkg.com/@lottiefiles/dotlottie-wc@0.8.11/dist/dotlottie-wc.js"
+    type="module">
+  </script>
+
+  <!-- SCRIPTS -->
+  <script
+    src="./index.scripts/menu.mobile.js"
+  > </script>
+</body>
+</html>

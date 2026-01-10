@@ -1,0 +1,11 @@
+{
+  "name": "alda_exams---copia",
+  "version": "1.0.0",
+  "description": "Alda Exams project, its a academic project from tlp subject that manage exames from ipial.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Rubem Ernesto Figueiredo and others",
+  "license": "ISC"
+}
