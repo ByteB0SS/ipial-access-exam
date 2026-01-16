@@ -25,9 +25,9 @@ function calculateAverage() {
   const average = ((grade1 + grade2) / 2).toFixed(1);
   document.getElementById("average-input").value = average;
 
-  let status = "Pending";
-  if (average >= 10) status = "Approved";
-  else status = "Failed";
+  let status = "Pendente";
+  if (average >= 10) status = "Aprovado";
+  else status = "Reprovado";
 
   document.getElementById("status-input").value = status;
 }

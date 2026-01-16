@@ -18,26 +18,28 @@
                     <span>IPIAL</span>
                 </a> 
                 <legend>
-                    <p>Entre na sua conta </p>
+                    <p>Entre na sua conta de administrador</p>
                 </legend>
             
                 <div class="inputs">
                     <div class="input-label">
-                        <label for="email">email</label>
-                        <input type="email" name="email" id="email" placeholder="exemplo@gmail.com">
+                        <label for="adminName">Nome</label>
+                        <input type="text" name="adminName" id="adminName" placeholder="Nome de adiministrador" value="admin">
                     </div>
                     <div class="input-label">
                         <label for="pw">Senha</label>
-                        <input type="password" name="pw" id="pw" placeholder="********">
+                        <input type="password" name="pw" id="pw" placeholder="********" value="senha complicada">
                     </div>
                 </div>
 
-                <button class="btn primary login-btn">Entrar agora</button>
+                <button class="btn primary login-btn" id="send-button">Entrar agora</button>
 
-                <a href="/src/pages/auth/register/register.html" class="register-link">sem conta, candidatar-me</a>
+                <p id="form-message"></p>
+                <a style="display: none;" id="dashboard-admin-link" href="../../dashboard/admin/overview/overview.html"></a>
             </form>
         </div>
         
+        <script src="./scripts/Login-handler.js" type="module"></script>
     </div>
 </body>
 </html>
