@@ -3,7 +3,6 @@ const observer = new IntersectionObserver((entries) => {
         if (entry.isIntersecting) {
             entry.target.classList.remove('animate-on-scroll');
             entry.target.classList.add('animated');
-            void entry.target.offsetWidth; // Trigger reflow to restart the animation
         }
     });
 })

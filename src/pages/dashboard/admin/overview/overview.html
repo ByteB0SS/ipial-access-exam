@@ -27,6 +27,17 @@
     <main>
       <section class="dashboard-overview container">
         <section class="overview">
+          <!-- ESTADOS DOS CANDIDATOS -->
+          <article class="overview-card">
+            <div class="card-header">
+              <span class="card-title">Estados dos candidatos</span>
+            </div>
+
+            <div class="chart-wrapper">
+              <canvas id="candidatesStatusChart"></canvas>
+            </div>
+          </article>
+          
           <!-- TOTAL CANDIDATOS -->
           <article class="overview-card">
             <div class="card-header">
@@ -80,51 +91,39 @@
             </p>
           </article>
 
-          <!-- ESTADOS DOS CANDIDATOS -->
+
           <article class="overview-card">
             <div class="card-header">
-              <span class="card-title">Estados dos candidatos</span>
+              <span class="card-title">Estatisticas por Cursos</span>
             </div>
 
-            <div class="chart-wrapper">
-              <canvas id="candidatesStatusChart"></canvas>
+            <div class="table-wrapper">
+              <table id="course-stats-table">
+                <thead>
+                  <tr>
+                    <th>Curso</th>
+                    <th>Total </th>
+                    <th>Aprovados</th>
+                    <th>Reprovados</th>
+                    <th>Pendentes</th>
+                  </tr>
+                </thead>
+
+                <tbody id="course-table-body">
+                  
+                </tbody>
+              </table>
             </div>
           </article>
         </section>
       </section>
     </main>
 
+    <!-- chart scripts -->
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
-    <script>
-      const ctx = document.getElementById("candidatesStatusChart");
-
-      new Chart(ctx, {
-        type: "doughnut",
-        data: {
-          labels: ["Aprovados", "Reprovados", "Pendentes"],
-          datasets: [
-            {
-              data: [420, 682, 152], // valores de exemplo
-              backgroundColor: [
-                "#22c55e", // verde
-                "#ef4444", // vermelho
-                "#facc15", // amarelo
-              ],
-              borderWidth: 0,
-            },
-          ],
-        },
-        options: {
-          cutout: "65%",
-          plugins: {
-            legend: {
-              position: "bottom",
-            },
-          },
-        },
-      });
-    </script>
-
+    <script src="./scripts/chart.js" type="module"> </script>
+    
+    <!-- scripts -->
     <script src="./scripts/overflow.js" type="module"></script>
   </body>
 </html>

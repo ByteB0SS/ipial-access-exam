@@ -67,3 +67,44 @@ canvas {
   width: 100% !important;
   height: auto !important;
 }
+
+/* 
+================================
+  Course Statictics Table
+================================
+*/
+
+.table-wrapper {
+  margin-top: 2rem;
+  overflow-x: auto !important;
+}
+
+#course-stats-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 1.5rem;
+}
+
+#course-stats-table th,
+#course-stats-table td {
+  padding: 0.75rem;
+  text-align: left;
+  border-bottom: 1px solid #e5e7eb;
+}
+
+#course-stats-table th {
+  background-color: #f9fafb;
+  font-weight: 600;
+}
+
+#course-stats-table tbody tr:hover {
+  background-color: #f1f5f9;
+}
+.status-badge {
+  padding: 0.25rem 0.5rem;
+  border-radius: 12px;
+  font-size: 0.9rem;
+  color: #fff;
+  display: inline-block;
+}
+
