@@ -326,20 +326,28 @@ input, select, textarea {
   background: linear-gradient(115deg, #fff, #3d226c12);
   border-radius: var(--radius-lg);
   padding: 2.4rem;
-  animation: fade-left .7s ease-in-out ;
+  /* animation: fade-left .7s ease-in-out ; */
   box-shadow: var(--shadow-md);
   transition: all 0.3s ease;
 }
 
 .about-card {
   background-color: var(--light-color);
-  animation: fade-up .7s ease-in-out ;
+  /* animation: fade-up .7s ease-in-out ; */
 }
 
 .about-card:hover,
 .course-card:hover {
   transform: translateY(-0.6rem);
   box-shadow: var(--shadow-md);
+}
+
+.course-card.animated {
+  animation: fade-left .7s ease-in-out forwards;
+}
+
+.about-card.animated {
+  animation: fade-up .7s ease-in-out forwards;
 }
 
 .card {
@@ -462,6 +470,16 @@ input, select, textarea {
 .blue-text {
   color: var(--primary-color);
 }
+
+.animate-on-scroll {
+  opacity: 0;
+  will-change: transform, opacity;
+}
+
+.animated{
+  opacity: 1;
+}
+
 
 /* =========================
    RESPONSIVE
