@@ -1,109 +1,156 @@
+
 import CandidateController from '../../../../../simulated-backend/controller/candidate/candidate.controller.js'
 import CourseRepository from '../../../../../simulated-backend/repositories/course/course.repository.js'
 
-let editButtons = document.querySelectorAll('.edit-button')
-let editingCurrentCandidateId
-const editModal = document.getElementById('edit-modal')
-const cancelButton = document.querySelector('.cancel-button')
-const tableBody = document.getElementById('candidates-table-body')
 const candidateController = new CandidateController()
 const courseRepo = new CourseRepository()
+let candidateList = []
+let editingCurrentCandidateId = null
+const tableBody = document.getElementById('candidates-table-body')
 
-// edit modal inputs and buttons
-const grade1 = document.getElementById('grade1-input')
-const grade2 = document.getElementById('grade2-input')
-const average = document.getElementById('average-input')
-const status = document.getElementById('status-input')
+
+// modal elements
+const editModal = document.getElementById('edit-modal')
+const cancelButton = document.querySelector('.cancel-button')
 const saveButton = document.querySelector('.save-button')
 
-// get all candidates
+const grade1Input = document.getElementById('grade1-input')
+const grade2Input = document.getElementById('grade2-input')
+const averageInput = document.getElementById('average-input')
+const statusInput = document.getElementById('status-input')
 
-const candidateListResponse = candidateController.findAll()
 
-if (!candidateListResponse.success) {
-  alert('algum erro ao buscar candidatos')
+// get Candidates
+function loadCandidates () {
+  const response = candidateController.findAll()
+
+  if (!response.success) {
+    alert('Erro ao buscar candidatos')
+    return
+  }
+
+  candidateList = [...response.candidateList]
+  renderCandidatesTable()
 }
 
-const candidateList = [...candidateListResponse.candidateList]
 
-if(candidateList.length == 0) {
-  tableBody.textContent = "Sem candidatos"
-}
+function renderCandidatesTable () {
+  tableBody.innerHTML = ''
 
-else {
-  let toInner = ""
-  candidateList.forEach((candidate)=> {
+  if (candidateList.length === 0) {
+    tableBody.textContent = 'Sem candidatos'
+    return
+  }
+
+  candidateList.forEach(candidate => {
     const course = courseRepo.findById(candidate.courseId)
-    const courseName = course.name
 
-    toInner =toInner + " \n " + `
-      <tr class="candidate-row" id="${candidate.id}">
-        <td class="candidate-name">${candidate.fullName}</td>
-        <td class="candidate-course">${courseName}</td>
-        <td class="candidate-email">${candidate.email}</td>
-        <td class="grade-1">${candidate.grade1}</td>
-        <td class="grade-2">${candidate.grade2}</td>
-        <td class="average">${(candidate.grade1 + candidate.grade2)/2}</td>
-        <td class="status ${candidate.status == 'Reprovado' ? 'failed' : candidate.status == 'Aprovado' ? "approved": "pending"}">${candidate.status}</td>
-        <td class="">
-          <button class="edit-button" candidateId="${candidate.id}">
-            Editar
-          </button>
-        </td>
-      </tr>
-    `
+    const row = document.createElement('tr')
+    row.classList.add('candidate-row')
+    row.id = candidate.id
+
+    row.appendChild(createCell(candidate.fullName, 'candidate-name'))
+    row.appendChild(createCell(course?.name ?? '-', 'candidate-course'))
+    row.appendChild(createCell(candidate.email, 'candidate-email'))
+    row.appendChild(createCell(candidate.grade1, 'grade-1'))
+    row.appendChild(createCell(candidate.grade2, 'grade-2'))
+    row.appendChild(createCell(calculateAverage(candidate.grade1, candidate.grade2), 'average'))
+    row.appendChild(createStatusCell(candidate.status))
+    row.appendChild(createActionCell(candidate.id))
+
+    tableBody.appendChild(row)
   })
-
-  tableBody.innerHTML = toInner
-
-  editButtons = document.querySelectorAll('.edit-button')
 }
 
+
+// cell functions 
+
+function createCell (content, className) {
+  const td = document.createElement('td')
+  td.textContent = content
+  if (className) td.classList.add(className)
+  return td
+}
+
+function createStatusCell (status) {
+  const td = document.createElement('td')
+  td.textContent = status
+
+  td.classList.add(
+    'status',
+    status === 'Aprovado'
+      ? 'approved'
+      : status === 'Reprovado'
+      ? 'failed'
+      : 'pending'
+  )
+
+  return td
+}
+
+function createActionCell (candidateId) {
+  const td = document.createElement('td')
+  const button = document.createElement('button')
+
+  button.textContent = 'Editar'
+  button.classList.add('edit-button')
+  button.dataset.candidateId = candidateId
+
+  button.addEventListener('click', openEditModal)
+
+  td.appendChild(button)
+  return td
+}
+
+
+// modal
 function toggleModal () {
   editModal.classList.toggle('open')
 }
 
-editButtons.forEach((button)=> {
-  button.addEventListener('click', function (e) {
-    editingCurrentCandidateId = button.attributes.candidateId.nodeValue
-    const candidate = candidateList.find((c) => c.id === editingCurrentCandidateId)
-    grade1.value = candidate.grade1
-    grade2.value = candidate.grade2
-    status.value = candidate.status
-    average.value = (grade1.value + grade2.value)/2
-    toggleModal()
-  })
-})
+function openEditModal (element) {
+  editingCurrentCandidateId = element.target.dataset.candidateId
+  const candidate = candidateList.find(c => c.id === editingCurrentCandidateId)
 
-cancelButton.addEventListener('click', function (e) {
+  grade1Input.value = candidate.grade1
+  grade2Input.value = candidate.grade2
+  statusInput.value = candidate.status
+  averageInput.value = calculateAverage(candidate.grade1, candidate.grade2)
+
   toggleModal()
-})
-
-function calculateAverage (n1, n2) {
-  n1 = Number(n1)
-  n2 = Number(n2)
-  average.value = (n1 + n2)/2
-  status.value = Number(average.value) >= 10 ? "Aprovado" : "Reprovado"
 }
 
-function Savechanges () {
-  const datas = {
-    grade1: Number(grade1.value),
-    grade2: Number(grade2.value),
-    status: status.value
+
+// calcs
+function calculateAverage (n1, n2) {
+  return (Number(n1) + Number(n2)) / 2
+}
+
+function updateAverageAndStatus () {
+  const avg = calculateAverage(grade1Input.value, grade2Input.value)
+  averageInput.value = avg
+  statusInput.value = avg >= 10 ? 'Aprovado' : 'Reprovado'
+}
+
+
+function saveChanges () {
+  const data = {
+    grade1: Number(grade1Input.value),
+    grade2: Number(grade2Input.value),
+    status: statusInput.value
   }
 
-  candidateController.update(editingCurrentCandidateId, datas)
+  candidateController.update(editingCurrentCandidateId, data)
+  toggleModal()
+  loadCandidates()
 }
 
-grade1.addEventListener("change", function (e) {
-  calculateAverage(grade1.value, grade2.value)
-})
 
-grade2.addEventListener("change", function (e) {
-  calculateAverage(grade1.value, grade2.value)
-})
+grade1Input.addEventListener('change', updateAverageAndStatus)
+grade2Input.addEventListener('change', updateAverageAndStatus)
 
-saveButton.addEventListener('click', function (e) {
-  Savechanges()
-})
+cancelButton.addEventListener('click', toggleModal)
+saveButton.addEventListener('click', saveChanges)
+
+
+loadCandidates()

@@ -1,12 +1,25 @@
-/* ===============================
+/* 
+==========================
+  Base
+==========================
+*/
+
+html, body {
+  overflow: hidden;
+}
+
+
+/* =============================
    MAIN CONTENT
-================================ */
+============================= */
 
 .main-content {
   padding: 1.5rem;
+  min-width: 0;
+  overflow-y: auto;
 }
 
-/* ===============================
+/* ======================
    CARD
 ================================ */
 
@@ -27,8 +40,16 @@
    TABLE
 ================================ */
 
+.card {
+  max-width: 100%;
+}
+
+
 .table-wrapper {
   width: 100%;
+  max-width: 100%;
+  -webkit-overflow-scrolling: touch;
+  /* margin-top: 1.5rem;   */
   overflow-x: auto;
 }
 
@@ -36,24 +57,9 @@
   width: 100%;
   border-collapse: collapse;
   font-size: 1.4rem;
+  min-width: 97.2rem;
 }
 
-.candidates-table th,
-.candidates-table td {
-  padding: 0.8rem;
-  border-bottom: 1px solid #e5e7eb;
-  text-align: left;
-}
-
-.candidates-table th {
-  background-color: #f9fafb;
-  font-weight: 600;
-  color: var(--dark-color);
-}
-
-.candidates-table tbody tr:hover {
-  background-color: #f3f4f6;
-}
 
 /* ===============================
    STATUS

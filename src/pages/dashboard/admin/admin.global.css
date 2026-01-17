@@ -1,70 +1,16 @@
-/* 
-===============================
-    Navigation Mobile Styles
-===============================
-*/
+/* ===============================
+   ADMIN DASHBOARD – GLOBAL
+=============================== */
 
-.mobile-nav {
-    display: none;
-    position: fixed;
-    bottom: 0;
-    width: 100%;
-    background-color: #fff;
-    border-top: 1px solid gainsboro;
-    padding: 1rem;
-}
-
-
-.mobile-nav  a {
-    color: #ecf0f1;
-    width: 100%;
-    height: 100%;
-    padding: 0.6rem 1rem;
-    text-decoration: none;
-    font-weight: bold;
-    border-radius: var(--radius-sm);
-    text-align: center;
-    border: 1px solid gainsboro;
-    color: var(--dark-color);
-}
-
-a.active {
-    background: linear-gradient(90deg, var(--primary-color), var(--secondary-color));
-
-    color: #ffffff;
-}
-
-@media (max-width: 1024px) {
-    .mobile-nav {
-        display: flex;
-        gap: 1rem;
-    }
-}
-
-.card {
-    background-color: #ffffff;
-    padding: 1.5rem;
-    border-radius: var(--radius-md);
-    box-shadow: var(--shadow-sm);
-    margin-bottom: 1.5rem;
-}
-
-.card h2 {
-    font-size: 1.8rem;
-    margin-bottom: 1rem;
-    color: var(--dark-color);
-}
-
-.card p {
-    font-size: 1.4rem;
-    color: var(--secondary-color);
-}
-
-
+/* ===== HEADER ===== */
 .header {
   height: 60px;
-  padding: 0 1rem;
-  background: #ffffff;
+  padding: 0 1.5rem;
+  background: linear-gradient(
+    90deg,
+    #ffffff 0%,
+    #f8fafc 100%
+  );
   border-bottom: 1px solid #e5e7eb;
 
   display: flex;
@@ -74,46 +20,98 @@ a.active {
 .brand {
   display: flex;
   align-items: center;
-  gap: 0.5rem;
+  gap: 0.6rem;
   text-decoration: none;
-  color: #111827;
+  color: #0f172a;
   font-weight: 600;
 }
 
 .brand img {
-  width: 32px;
-  height: 32px;
+  width: 34px;
+  height: 34px;
 }
 
 .brand span {
-  font-size: 1.1rem;
+  font-size: 1.2rem;
 }
 
+/* ===============================
+   NAVIGATION (MOBILE + DESKTOP)
+=============================== */
 
-/* ===== DESKTOP ===== */
+.mobile-nav {
+  display: none;
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  background-color: #ffffff;
+  border-top: 1px solid #e5e7eb;
+  padding: 1rem;
+  gap: 1rem;
+  z-index: 100;
+}
+
+.mobile-nav a {
+  width: 100%;
+  padding: 0.7rem 1rem;
+  text-decoration: none;
+  font-weight: 500;
+  border-radius: 0.8rem;
+  text-align: center;
+  color: #334155;
+  border: 1px solid #e5e7eb;
+  transition: background 0.2s ease, color 0.2s ease;
+}
+
+.mobile-nav a.active {
+  background: linear-gradient(
+    90deg,
+    var(--primary-color),
+    var(--secondary-color)
+  );
+  color: #ffffff;
+  border-color: transparent;
+}
+
+/* ===== MOBILE ===== */
+@media (max-width: 1024px) {
+  .mobile-nav {
+    display: flex;
+  }
+}
+
+/* ===============================
+   DESKTOP LAYOUT
+=============================== */
 @media (min-width: 1024px) {
 
   body {
     display: grid;
-    grid-template-columns: 240px 1fr;
+    grid-template-columns: 260px 1fr;
     grid-template-rows: 60px 1fr;
     grid-template-areas:
       "header header"
       "sidebar main";
     height: 100vh;
+    background: #f5f7fb;
   }
 
   .header {
     grid-area: header;
     position: sticky;
     top: 0;
-    z-index: 10;
+    z-index: 20;
   }
 
   aside {
     grid-area: sidebar;
+    background: linear-gradient(
+      180deg,
+      #ffffff 0%,
+      #f8fafc 100%
+    );
     border-right: 1px solid #e5e7eb;
-    background: #ffffff;
+    padding-top: 1rem;
   }
 
   .mobile-nav {
@@ -121,24 +119,52 @@ a.active {
     display: flex;
     flex-direction: column;
     padding: 1rem;
-    gap: 0.5rem;
+    gap: 0.4rem;
+    border-top: none;
   }
 
   .mobile-nav a {
-    padding: 0.6rem 0.8rem;
-    border-radius: 8px;
-    text-decoration: none;
-    color: var(--dark-color);
+    padding: 0.7rem 1rem;
+    border-radius: 0.8rem;
+    color: #334155;
     font-weight: 500;
+    border: none;
   }
 
   .mobile-nav a:hover {
-    background: #f3f4f6;
+    background: #eef2ff;
+    color: #1e3a8a;
   }
 
   .mobile-nav a.active {
-    background: var(--primary-color);
+    background: linear-gradient(
+      90deg,
+      var(--primary-color),
+      var(--secondary-color)
+    );
     color: #ffffff;
   }
-
 }
+
+/* ===============================
+   GENERIC CARDS (SE USADOS)
+=============================== */
+.card {
+  background-color: #ffffff;
+  padding: 1.8rem;
+  border-radius: 1.4rem;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.06);
+  margin-bottom: 1.5rem;
+}
+
+.card h2 {
+  font-size: 1.8rem;
+  margin-bottom: 1rem;
+  color: #0f172a;
+}
+
+.card p {
+  font-size: 1.4rem;
+  color: #475569;
+}
+

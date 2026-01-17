@@ -11,7 +11,7 @@ const pendingCandidates = candidatesResponse.candidateList.filter(candidate => c
 const ctx = document.getElementById("candidatesStatusChart");
 
 new Chart(ctx, {
-  type: "doughnut",
+  type: "bar",
   data: {
     labels: ["Aprovados", "Reprovados", "Pendentes"],
     datasets: [

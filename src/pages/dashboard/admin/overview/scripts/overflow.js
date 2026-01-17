@@ -18,6 +18,68 @@ const approvedCandidates = candidateList.filter((candidate) => candidate.status 
 const rejectedCandidates = candidateList.filter((candidate) => candidate.status === "Reprovado").length;
 const pendingCandidates = candidateList.filter((candidate) => candidate.status === "Pendente").length;
 
+// to be modify
+const overViewSection = document.querySelector(".overview");
+
+const generalStatics = [
+  {
+    title: "Total Candidatos",
+    value: totalCandidates,
+    subtitle: "Registos concluidos",
+    description: "Todos os candidatos inscritos"
+  },
+  {
+    title: "Aprovados",
+    value: approvedCandidates,
+    subtitle: "Classificação final",
+    description: "Candidatos admitidos"
+  },
+  {
+    title: "Reprovados",
+    value: rejectedCandidates,
+    subtitle: "Classificação final",
+    description: "candidatos rejeitados"
+  },
+  {
+    title: "Pendentes",
+    value: totalCandidates,
+    subtitle: "Não classificados",
+    description: "Candidatos a espera de classificação"
+  },
+]
+
+generalStatics.forEach((staticInfo)=> {
+  const card = document.createElement("article");
+  card.classList.add("overview-card");
+
+  const cardHeader = document.createElement("div");
+  cardHeader.classList.add("card-header");
+  card.appendChild(cardHeader)
+
+  const cardTitle = document.createElement("span");
+  cardTitle.classList.add("card-title");
+  cardHeader.appendChild(cardTitle)
+
+  const cardValue = document.createElement("h2")
+  cardValue.classList.add("card-value")
+  card.appendChild(cardValue)
+
+  const cardSubtitle = document.createElement("p")
+  cardSubtitle.classList.add("card-subtitle")
+  card.appendChild(cardSubtitle)
+
+  const cardDescription = document.createElement("p")
+  cardSubtitle.classList.add("card-description")
+  card.appendChild(cardDescription)
+
+  cardTitle.textContent = staticInfo.title
+  cardValue.textContent = staticInfo.value
+  cardSubtitle.textContent = staticInfo.subtitle
+  cardDescription.textContent = staticInfo.description
+
+  overViewSection.appendChild(card)
+  
+})
 // Each course statistics
 const courseStats = courses.map((course) => {
   const candidatesInCourse = candidateList.filter((candidate) => candidate.courseId === course.id);
@@ -34,12 +96,6 @@ const courseStats = courses.map((course) => {
   };
 })
 
-// injecting data into HTML
-
-// general stats
-
-
-// each course stats
 const tableBody = document.getElementById("course-table-body");
 
 courseStats.forEach((stat) => {
