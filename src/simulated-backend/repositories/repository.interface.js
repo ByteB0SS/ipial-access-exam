@@ -51,4 +51,10 @@ export default class RepositoryInterface {
         this.dbManager.write(db);
         return true;
     }
+
+    deleteAll(){
+        const db = this.dbManager.read();
+        db[this.entityName] = []
+        this.dbManager.write(db)
+    }
 }

@@ -11,7 +11,7 @@
 <body>
     <div class="container login-container">
         
-        <div class="course-card form-box">
+        <div class="card form-box">
             <form action="#">
                 <a href="#" class="brand">
                     <img src="/src/public/logos/ipial-logo (2).png" alt="Logo IPIAL" />
@@ -24,47 +24,51 @@
                 <div class="inputs">
                     <div class="input-label">
                         <label for="full-name">Nome Completo</label>
-                        <input type="text" name="full-name" id="full-name" placeholder="Rubem Ernesto Figueiredo">
+                        <input aria-required="true" required type="text" name="full-name" id="full-name" placeholder="Rubem Ernesto Figueiredo">
                     </div>
 
                     <div class="input-label">
                         <label for="email">email</label>
-                        <input type="email" name="email" id="email" placeholder="exemplo@gmail.com">
+                        <input aria-required="true" required type="email" name="email" id="email" placeholder="exemplo@gmail.com">
                     </div>
                     
                     <div class="input-label">
-                        <label for="born-date">Data de Nascimento</label>
-                        <input type="date" name="born-date" id="born-date">
+                        <label for="birthdate">Data de Nascimento</label>
+                        <input aria-required="true" required type="date" name="born-date" id="birthdate">
                     </div>
 
                     <div class="input-label">
                         <label for="bi-or-passaporte">Bi/Passa-porte</label>
-                        <input type="text" name="bi-or-passaporte" id="bi-or-passaporte" placeholder="1234567890AB">
+                        <input aria-required="true" required type="text" name="bi-or-passaporte" id="bi-or-passaporte" placeholder="1234567890AB">
                     </div>
 
+                    
                     <div>
                         <label for="course">curso a candidatar-se</label>
-                        <select name="course" id="course">
+                        <select name="course" required aria-required="true" id="courses-selector">
                             <option value="" disabled selected>Selecione um curso</option>
-                            <option value="informatica">Informática</option>
-                            <option value="cons-civil">Construção Civil</option>
-                            <option value="eletricidade">Eletricidade</option>
-                            <option value="Eletro-teleco">Eletronica e Telecomunicações</option>
+                            <option value="2">Informática</option>
+                            <option value="1">Construção Civil</option>
+                            <option value="4">Eletricidade</option>
+                            <option value="3">Eletronica e Telecomunicações</option>
                         </select>
                     </div>
-
+                    
                     <div class="input-label">
-                        <label for="pw">Senha</label>
-                        <input type="password" name="pw" id="pw" placeholder="********">
+                        <label for="secret-key">Chave Secreta</label>
+                        <input aria-required="true" required type="text" name="secret-key" id="secret-key" placeholder="Ultra secreto">
+                        <p class="important-p"><span>!IMPORTANTE:</span> Nunca esqueça da sua chave secreta e não compartilhe com ninguém, ela será usada pra consulta de seu cadastro</p>
                     </div>
+                    
                 </div>
 
-                <button class="btn primary login-btn">Entrar agora</button>
-
-                <a href="/src/pages/auth/login/login.html" class="register-link">Já me candidatei, entrar na minha conta</a>
+                <button class="btn primary login-btn" id="send-button">Candidatar agora</button>
+                <p id="form-message"></p>
+                <a href="../../../index.html" id="index-link" style="display: none;"></a>
             </form>
         </div>
         
+        <script src="./scripts/register-handler.js" type="module"></script>
     </div>
 </body>
 </html>

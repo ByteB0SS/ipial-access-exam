@@ -24,6 +24,7 @@
       <nav class="mobile-nav">
         <a href="/src/pages/dashboard/admin/overview/overview.html">Visão Geral</a>
         <a class="active" href="#">Candidatos</a>
+        <a href="../../../../index.html">Início</a>
       </nav>
     </aside>
 
@@ -37,7 +38,7 @@
               <tr>
                 <th>Nome</th>
                 <th>Curso</th>
-                <th>Contacto</th>
+                <th>email</th>
                 <th>Nota 1</th>
                 <th>Nota 2</th>
                 <th>Média</th>
@@ -46,21 +47,8 @@
               </tr>
             </thead>
 
-            <tbody>
-              <tr class="candidate-row">
-                <td class="candidate-name">João Manuel</td>
-                <td class="candidate-course">Informática</td>
-                <td class="candidate-contact">923456789</td>
-                <td class="grade-1">12</td>
-                <td class="grade-2">14</td>
-                <td class="average">13</td>
-                <td class="status approved">Aprovado</td>
-                <td class="actions">
-                  <button class="edit-button" onclick="openModal(this)">
-                    Editar
-                  </button>
-                </td>
-              </tr>
+            <tbody id="candidates-table-body">
+              
             </tbody>
           </table>
         </div>
@@ -97,7 +85,6 @@
             <button
               type="button"
               class="cancel-button"
-              onclick="closeModal()"
             >
               Cancelar
             </button>
@@ -109,6 +96,6 @@
       </div>
     </div>
 
-    <script src="/src/pages/dashboard/admin/candidates/candidate-table.js"></script>
+    <script src="./scripts/update-modal.js" type="module"></script>
   </body>
 </html>

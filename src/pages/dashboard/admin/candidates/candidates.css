@@ -76,13 +76,9 @@
 }
 
 /* ===============================
-   ACTION BUTTONS
+  table BUTTONS
 ================================ */
 
-.actions {
-  display: flex;
-  gap: 0.5rem;
-}
 
 .edit-button {
   background-color: var(--primary-color);
@@ -110,6 +106,10 @@
   align-items: center;
   justify-content: center;
   z-index: 100;
+}
+
+.modal.open {
+  display: flex;
 }
 
 .modal-content {

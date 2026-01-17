@@ -16,9 +16,10 @@ export default class CandidateRepository extends RepositoryInterface {
         const candidate = this.findById(candidateId);
         const courseId = candidate.courseId 
         const course = this.courseRepository.findById(courseId);
+        console.log(course)
         return {
             ...candidate,
-            course: course || null
+            course: course 
         };
     }
 }

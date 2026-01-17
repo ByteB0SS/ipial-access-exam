@@ -25,9 +25,23 @@
     }
   ],
   "session": [
-
+    {
+      "adminId": "uuid-admin-1",
+      "token": "62845bf9-9d83-4f2d-9973-80767971886a",
+      "createdAt": 1768431164200,
+      "id": "a832b65a-8165-41c3-b4b5-8e271bf9c4c5"
+    }
   ],
   "candidates": [
-    
+    {
+      "name": "Rubem Ernesto",
+      "email": "rubemernesto2@gmail.com",
+      "birthDate": "1995-10-20",
+      "biPassport": "CD789012",
+      "courseId": "1",
+      "status": "pending",
+      "createdAt": "2026-01-15T12:58:00.677Z",
+      "id": "aca8c7bc-dca4-4adb-aae9-a460ee6b5be1"
+    }
   ]
 }

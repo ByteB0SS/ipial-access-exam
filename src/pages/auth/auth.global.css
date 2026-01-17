@@ -21,6 +21,7 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    animation: fade-up .7s ease-in-out ;
     gap: 1.5rem;
 }
 
@@ -52,7 +53,6 @@
     align-self: flex-start;
     font-size: 1.4rem;
     font-weight: 500;
-    margin-bottom: 0.7rem;
 }
 
 .login-btn {

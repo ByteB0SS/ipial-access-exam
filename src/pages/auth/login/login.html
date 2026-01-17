@@ -11,7 +11,7 @@
 <body>
     <div class="container login-container">
         
-        <div class="course-card form-box">
+        <div class="card form-box">
             <form action="#">
                 <a href="#" class="brand">
                     <img src="/src/public/logos/ipial-logo (2).png" alt="Logo IPIAL" />
@@ -24,11 +24,11 @@
                 <div class="inputs">
                     <div class="input-label">
                         <label for="adminName">Nome</label>
-                        <input type="text" name="adminName" id="adminName" placeholder="Nome de adiministrador" value="admin">
+                        <input required aria-required="true" ="text" name="adminName" id="adminName" placeholder="Nome de adiministrador" value="admin">
                     </div>
                     <div class="input-label">
                         <label for="pw">Senha</label>
-                        <input type="password" name="pw" id="pw" placeholder="********" value="senha complicada">
+                        <input aria-required="true" type="password" name="pw" id="pw" placeholder="********" value="senha complicada">
                     </div>
                 </div>
 
