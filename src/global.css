@@ -79,7 +79,7 @@ html {
 
 /* =========================
    GLOBAL ELEMENTS
-========================= */
+====================== */
 
 img {
   max-width: 100%;
@@ -109,7 +109,7 @@ input, select, textarea {
 
 /* =========================
    CONTAINER
-========================= */
+================= */
 
 .container {
   width: 100%;
@@ -214,9 +214,10 @@ input, select, textarea {
     position: fixed;
     left: 0;
     right: 0;
-    top:-100%;
+    top:-120%;
     transition: all 0.5s ease-in-out;
     background-color: #ffffff;
+    border-bottom: 1px solid gainsboro;
 }
 
 .nav-mobile.active {
@@ -604,4 +605,18 @@ table tr {
 
 table tr:hover {
   background: #f1f5ff;
+}
+
+
+/* modal overlay */
+.modal-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(6, 10, 25, 0.75);
+  backdrop-filter: blur(1rem);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 9999;
+  padding: 1.5rem;
 }

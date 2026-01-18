@@ -234,3 +234,137 @@ div.course-img-box .course-img {
     grid-template-columns: repeat(4, 1fr);
   }
 }
+
+/* 
+=======================
+  Result Modal
+=======================
+*/
+
+/* Overlay */
+
+
+.hidden {
+  display: none;
+}
+
+/* Modal */
+.modal-container {
+  background: var(--dark-color);
+  width: 100%;
+  max-width: 52rem;
+  border-radius: var(--radius-md);
+  position: relative;
+  color: #f5f6fa;
+  box-shadow: 0 30px 80px rgba(0, 0, 0, 0.6);
+  animation: appear 0.35s ease;
+  padding: 3rem ;
+}
+
+
+/* Close */
+.modal-close {
+  position: absolute;
+  top: 0rem;
+  right: 1rem;
+  background: none;
+  border: none;
+  font-size: 2.6rem;
+  color: #aaa;
+  cursor: pointer;
+}
+
+.modal-close:hover {
+  color: #fff;
+}
+
+/* Status Card */
+.status-card {
+  border-radius: var(--radius-md);
+  padding: 2.2rem;
+  text-align: center;
+  margin-bottom: 2.2rem;
+}
+
+.status-card span {
+  font-size: 2.8rem;
+  font-weight: 800;
+  letter-spacing: 1px;
+}
+
+/* Status Variants */
+.status-approved {
+  background: linear-gradient(135deg, #1dd1a1, #10ac84);
+}
+
+.status-rejected {
+  background: linear-gradient(135deg, #ff6b6b, #ee5253);
+}
+
+.status-pending {
+  background: linear-gradient(135deg, #5f27cd, #341f97);
+}
+
+/* Content */
+.modal-content h2 {
+  margin: 0;
+  font-size: 22px;
+}
+
+.candidate-email {
+  color: #cfd2ff;
+  font-size: 14px;
+  margin-bottom: 22px;
+}
+
+/* Grades */
+.grades {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 14px;
+  margin-bottom: 20px;
+}
+
+.grade-box {
+  background: rgba(133, 55, 55, 0.05);
+  border-radius: 12px;
+  padding: 14px;
+  text-align: center;
+}
+
+.grade-box span {
+  font-size: 13px;
+  color: #aaa;
+}
+
+.grade-box strong {
+  font-size: 22px;
+}
+
+.grade-box.highlight {
+  background: linear-gradient(135deg, var(--dark-color), var(--secondary-color), var(--primary-color));
+}
+
+/* Meta */
+.meta {
+  display: flex;
+  justify-content: space-between;
+  font-size: 13px;
+  color: #bbb;
+}
+
+
+/* Add candidates button */
+
+button#add-200-candidates {
+  /* position: fixed;
+  bottom: 1rem;
+  right: 1rem; */
+  border-radius: var(--radius-md);
+  background: linear-gradient(90deg, var(--dark-bg),  var(--secondary-color), var(--primary-color));
+  /* background-color: var(--dark-color); */
+  padding: 1rem;
+  font-weight: 600;
+  color: white;
+  z-index: 99999999999;
+}

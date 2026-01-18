@@ -1,5 +1,4 @@
 // overview
-
 import CandidateController from "../../../../../simulated-backend/controller/candidate/candidate.controller.js";
 import CourseRepository from "../../../../../simulated-backend/repositories/course/course.repository.js";
 
@@ -18,7 +17,6 @@ const approvedCandidates = candidateList.filter((candidate) => candidate.status 
 const rejectedCandidates = candidateList.filter((candidate) => candidate.status === "Reprovado").length;
 const pendingCandidates = candidateList.filter((candidate) => candidate.status === "Pendente").length;
 
-// to be modify
 const overViewSection = document.querySelector(".overview");
 
 const generalStatics = [
@@ -42,7 +40,7 @@ const generalStatics = [
   },
   {
     title: "Pendentes",
-    value: totalCandidates,
+    value: pendingCandidates,
     subtitle: "Não classificados",
     description: "Candidatos a espera de classificação"
   },

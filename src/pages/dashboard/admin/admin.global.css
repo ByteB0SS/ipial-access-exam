@@ -78,6 +78,14 @@
   .mobile-nav {
     display: flex;
   }
+
+  body, html {
+    overflow: auto !important;
+  }
+
+  .main-content {
+    padding-bottom: 5rem !important;
+  }
 }
 
 /* ===============================
