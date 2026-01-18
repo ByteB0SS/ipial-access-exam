@@ -250,7 +250,7 @@ div.course-img-box .course-img {
 
 /* Modal */
 .modal-container {
-  background: var(--dark-color);
+  background: var(--dark-bg);
   width: 100%;
   max-width: 52rem;
   border-radius: var(--radius-md);
@@ -361,7 +361,7 @@ button#add-200-candidates {
   bottom: 1rem;
   right: 1rem; */
   border-radius: var(--radius-md);
-  background: linear-gradient(90deg, var(--dark-bg),  var(--secondary-color), var(--primary-color));
+  background: linear-gradient(90deg, var(--dark-color),  var(--secondary-color), var(--primary-color));
   /* background-color: var(--dark-color); */
   padding: 1rem;
   font-weight: 600;
