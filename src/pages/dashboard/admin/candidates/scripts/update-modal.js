@@ -4,6 +4,7 @@ import CourseRepository from '../../../../../simulated-backend/repositories/cour
 
 const candidateController = new CandidateController()
 const courseRepo = new CourseRepository()
+
 let candidateList = []
 let editingCurrentCandidateId = null
 const tableBody = document.getElementById('candidates-table-body')

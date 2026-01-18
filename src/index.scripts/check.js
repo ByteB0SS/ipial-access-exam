@@ -50,8 +50,8 @@ function openResultModal(candidate) {
   if (candidate.status === "Aprovado") {
     statusText.textContent = "APROVADO 🥳"
     statusCard.classList.add("status-approved")
-  } else if (candidate.status === "Reprovado 🥹") {
-    statusText.textContent = "REPROVADO"
+  } else if (candidate.status === "Reprovado") {
+    statusText.textContent = "REPROVADO 🥹"
     statusCard.classList.add("status-rejected")
   } else {
     statusText.textContent = "PENDENTE ⏳"

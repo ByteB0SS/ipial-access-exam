@@ -36,7 +36,7 @@ button.addEventListener("click", () => {
 
     const estatisticas = { 1: 0, 2: 0, 3: 0, 4: 0 };
 
-    for (let i = 1; i <= 200; i++) {
+    for (let i = 1; i <= 2000; i++) {
         const candidate = {
             fullName: `Candidato Teste ${i}`,
             email: gerarEmail(i),

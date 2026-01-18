@@ -12,13 +12,13 @@ const pendingCandidates = candidateList.filter(c => c.status === "Pendente").len
 const ctx = document.getElementById("candidatesStatusChart");
 
 new Chart(ctx, {
-    type: "bar",
+    type: "polarArea",
     data: {
         labels: ["Aprovados", "Reprovados", "Pendentes"],
         datasets: [
             {
                 data: [approvedCandidates, rejectedCandidates, pendingCandidates],
-                backgroundColor: ["#22c55e", "#ef4444", "#facc15"],
+                backgroundColor: ["#2564eb56", "#02061776", "#4c307c6f"],
                 borderWidth: 0
             }
         ]
